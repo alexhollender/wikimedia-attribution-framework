@@ -18,20 +18,25 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Getting Started",
-        items: [{ text: "Overview", link: "/" }],
+        items: [
+          { text: "Overview", link: "/" },
+          { text: "Principles and levels", link: "/principles-and-levels" },
+        ],
       },
       {
         text: "Reuse Scenarios",
-        collapsed: false,
-        items: scenarios.map((scenario) => ({
-          text: scenario.name,
-          link: scenario.url,
-        })),
+        collapsed: true,
+        items: [
+          { text: "Overview", link: "/scenarios" },
+          ...scenarios.map((scenario) => ({
+            text: scenario.name,
+            link: scenario.url,
+          })),
+        ],
       },
       {
         text: "Attribution Signals",
-        collapsed: false,
+        collapsed: true,
         items: [
           {
             text: "Overview",
@@ -46,12 +51,8 @@ export default defineConfig({
       {
         items: [
           {
-            text: "Policy and Principles",
-            link: "/policy-and-principles",
-          },
-          {
-            text: "Help and FAQs",
-            link: "/help-and-faqs",
+            text: "Help",
+            link: "/help",
           },
         ],
       },

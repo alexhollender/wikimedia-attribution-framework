@@ -221,7 +221,6 @@ function updateField(field: keyof FormData, value: any) {
   display: flex;
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .attribution-form {

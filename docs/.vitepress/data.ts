@@ -1,4 +1,4 @@
-import type { Scenario, AttributionSignal } from "./types";
+import type { Scenario, AttributionSignal, AttributionLevel } from "./types";
 
 export const scenarios: Scenario[] = [
   {
@@ -157,3 +157,33 @@ export const scenarioSignalsMap: Record<Scenario["id"], string[]> = {
     "contributor-count",
   ],
 };
+
+export const attributionLevels: AttributionLevel[] = [
+  {
+    id: "basic",
+    name: "Basic",
+    description: [
+      "Explicit mention of source",
+      "Path to source (as appropriate to the medium)",
+      "Content has been reused without modification, or modifications have been noted.",
+      "All “essential” attribution signals for the use-case and format are provided",
+    ],
+  },
+  {
+    id: "approaching",
+    name: "Approaching",
+    description: [
+      "All “Basic” items",
+      "All “essential” attribution signals for the use-case and format are provided in context and visible with reused content",
+    ],
+  },
+  {
+    id: "ideal",
+    name: "Ideal",
+    description: [
+      "All “Approaching” items",
+      "One or more additional signals beyond the essential for the reuse scenario has been used",
+      "One more active CTAs to engage with Wikimedia included in the reuse scenario.",
+    ],
+  },
+];

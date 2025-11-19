@@ -27,6 +27,11 @@
       />
     </div>
 
+    <cdx-button action="progressive" weight="primary">
+      <cdx-icon :icon="cdxIconDownload" />
+      Configure
+    </cdx-button>
+
     <AttributionControls v-model="formData" />
   </div>
 </template>
@@ -35,6 +40,7 @@
 import { ref, computed } from "vue";
 import WikipediaSearchCard from "./WikipediaSearchCard.vue";
 import AttributionControls from "./AttributionControls.vue";
+import { cdxIconDownload } from "@wikimedia/codex-icons";
 
 interface FormData {
   articleTitle: string;
