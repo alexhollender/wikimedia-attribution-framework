@@ -4,6 +4,7 @@ import "./custom.css";
 import Card from "./components/Card.vue";
 import GridLayout from "./components/GridLayout.vue";
 import FilterButtons from "./components/FilterButtons.vue";
+import FilteredContent from "./components/FilteredContent.vue";
 import WikipediaCard from "./components/WikipediaCard.vue";
 import WikipediaSearchCard from "./components/WikipediaSearchCard.vue";
 import AttributionControls from "./components/AttributionControls.vue";
@@ -25,6 +26,7 @@ export default {
     app.component("Card", Card);
     app.component("GridLayout", GridLayout);
     app.component("FilterButtons", FilterButtons);
+    app.component("FilteredContent", FilteredContent);
     app.component("WikipediaCard", WikipediaCard);
     app.component("WikipediaSearchCard", WikipediaSearchCard);
     app.component("AttributionControls", AttributionControls);
