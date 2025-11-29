@@ -108,9 +108,10 @@ const cardLink = computed(() => (isLink.value ? props.url : undefined));
 
 .cdx-card {
   background-color: @background-color-base;
-  border: @border-base;
   border-radius: @border-radius-base;
   padding: @spacing-100;
+  box-shadow: @box-shadow-medium;
+  border: none;
 
   .cdx-info-chip__icon--vue {
     display: none;

@@ -1,10 +1,6 @@
 # Search Engine Results Page
 
-This page demonstrates how to properly attribute Wikipedia articles in search engine results pages (SERPs). Use the interactive example below to explore different attribution options and see how they affect the appearance of the search result card.
-
-## Interactive Example
-
-The example below shows a properly attributed Wikipedia article reference. You can toggle different attribution options on and off to see how they affect the display:
+Search engines are one of the most visible and common ways people encounter Wikimedia content. Whether on classic result pages or AI-generated overviews, Wikipedia and its sister projects stand as a fundamental source of the information provided to search engine users. Search platforms amplify Wikimedia’s reach, and are a primary gateway to free knowledge for billions of people worldwide. Consistent attribution is necessary not only to safeguard the visibility of our projects as a source of high-quality content, but also to ensure reciprocity.
 
 <WikipediaAttributionDemo />
 

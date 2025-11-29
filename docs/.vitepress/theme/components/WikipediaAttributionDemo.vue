@@ -1,38 +1,48 @@
 <template>
-  <div class="wikipedia-attribution-demo">
-    <div class="card-preview">
-      <WikipediaSearchCard
-        :site-name="siteName"
-        :brandmark="formData.brandmarkAttribution"
-        :title="formData.articleTitle || 'Jean-Michel Basquiat'"
-        :activity-level="
-          formData.activityIndicator ? formData.activityLevel : undefined
-        "
-        :activity-indicator="formData.activityIndicator"
-        :number-of-contributors="
-          formData.contributorIndicator
-            ? formData.numberOfContributors || 80
-            : undefined
-        "
-        :number-of-views="
-          formData.viewsIndicator ? formData.numberOfViews || 32000 : undefined
-        "
-        :number-of-sources="
-          formData.referenceIndicator
-            ? formData.numberOfSources || 32
-            : undefined
-        "
-        :call-to-action="formData.callToAction"
-        :snippet-length="formData.snippetLength"
-      />
+  <div className="wikipedia-attribution-demo-wrapper">
+    <div class="wikipedia-attribution-demo box-shadow-medium">
+      <div class="card-preview">
+        <WikipediaSearchCard
+          :site-name="siteName"
+          :brandmark="formData.brandmarkAttribution"
+          :title="formData.articleTitle || 'Jean-Michel Basquiat'"
+          :activity-level="
+            formData.activityIndicator ? formData.activityLevel : undefined
+          "
+          :activity-indicator="formData.activityIndicator"
+          :number-of-contributors="
+            formData.contributorIndicator
+              ? formData.numberOfContributors || 80
+              : undefined
+          "
+          :number-of-views="
+            formData.viewsIndicator
+              ? formData.numberOfViews || 32000
+              : undefined
+          "
+          :number-of-sources="
+            formData.referenceIndicator
+              ? formData.numberOfSources || 32
+              : undefined
+          "
+          :call-to-action="formData.callToAction"
+          :snippet-length="formData.snippetLength"
+        />
+      </div>
+
+      <div>
+        <cdx-button
+          action="progressive"
+          weight="primary"
+          @click="showControls = !showControls"
+        >
+          <cdx-icon :icon="cdxIconConfigure" />
+          Configure
+        </cdx-button>
+      </div>
+
+      <AttributionControls v-if="showControls" v-model="formData" />
     </div>
-
-    <cdx-button action="progressive" weight="primary">
-      <cdx-icon :icon="cdxIconDownload" />
-      Configure
-    </cdx-button>
-
-    <AttributionControls v-model="formData" />
   </div>
 </template>
 
@@ -40,7 +50,7 @@
 import { ref, computed } from "vue";
 import WikipediaSearchCard from "./WikipediaSearchCard.vue";
 import AttributionControls from "./AttributionControls.vue";
-import { cdxIconDownload } from "@wikimedia/codex-icons";
+import { cdxIconConfigure } from "@wikimedia/codex-icons";
 
 interface FormData {
   articleTitle: string;
@@ -74,6 +84,8 @@ const formData = ref<FormData>({
   snippetLength: "medium",
 });
 
+const showControls = ref(false);
+
 const siteName = computed(() => {
   return formData.value.sourceAttribution === "name+language"
     ? "English Wikipedia"
@@ -81,23 +93,27 @@ const siteName = computed(() => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@import (reference) "@wikimedia/codex-design-tokens/theme-wikimedia-ui.less";
+
+.wikipedia-attribution-demo-wrapper {
+  background-color: var(--vp-sidebar-bg-color);
+  padding: @spacing-100;
+}
+
 .wikipedia-attribution-demo {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: @spacing-150;
 }
 
 .card-preview {
-  margin: 0 auto;
-  max-width: 45rem;
   width: 100%;
 }
 
 @media (max-width: 768px) {
   .wikipedia-attribution-demo {
-    gap: 1.5rem;
+    gap: @spacing-150;
   }
 }
 </style>
