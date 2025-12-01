@@ -15,22 +15,28 @@ export const scenarios: Scenario[] = [
     url: "/scenarios/ai-assistants",
   },
   {
-    id: "audio",
-    name: "Audio",
-    description: "Audio media or voice assistants using content where source citation must remain transparent.",
-    url: "/scenarios/audio",
+    id: "social",
+    name: "Social media [coming soon]",
+    description: "Content shared on social media.",
+    url: "/scenarios/social",
   },
   {
     id: "games-rich-experiences",
-    name: "Games and Rich Experiences",
+    name: "Games and Rich media [coming soon]",
     description: "Incorporating Wikimedia text, images, or data in educational and interactive environments.",
     url: "/scenarios/games-rich-experiences",
   },
   {
     id: "media-outlets",
-    name: "Media Outlets",
+    name: "Media and publications [coming soon]",
     description: "Using Wikimedia text, images, or data in articles, videos, or broadcasts.",
     url: "/scenarios/media-outlets",
+  },
+  {
+    id: "audio",
+    name: "Audio [coming soon]",
+    description: "Audio media or voice assistants using content where source citation must remain transparent.",
+    url: "/scenarios/audio",
   },
 ];
 

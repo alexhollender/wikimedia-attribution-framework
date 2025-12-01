@@ -23,7 +23,6 @@ export default defineConfig({
         items: [
           { text: "Overview", link: "/" },
           { text: "Principles and levels", link: "/principles-and-levels" },
-          { text: "Adoption", link: "/adoption" },
         ],
       },
       {
@@ -53,6 +52,8 @@ export default defineConfig({
       },
       {
         items: [
+          { text: "Adoption gallery", link: "/adoption" },
+          { text: "Research & resources", link: "/research" },
           {
             text: "Help",
             link: "/help",
