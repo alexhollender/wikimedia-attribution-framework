@@ -17,7 +17,7 @@ export const scenarios: Scenario[] = [
   {
     id: "social",
     name: "Social media [coming soon]",
-    description: "Content shared on social media.",
+    description: "Sharing Wikimedia content in online social contexts - in online forums, chat and messaging services, social networking platforms.",
     url: "/scenarios/social",
   },
   {
@@ -29,7 +29,7 @@ export const scenarios: Scenario[] = [
   {
     id: "media-outlets",
     name: "Media and publications [coming soon]",
-    description: "Using Wikimedia text, images, or data in articles, videos, or broadcasts.",
+    description: "Using Wikimedia text, images, or data in articles, journals, blogs, etc.",
     url: "/scenarios/media-outlets",
   },
   {

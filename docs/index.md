@@ -28,7 +28,7 @@ We identified and prioritized reuse scenarios where Wikimedia content has the gr
   />
 </GridLayout>
 
-Not sure if your data reuse scenario is covered? Visit the [help page](help.html) for additional help and guidance.
+This is a living and growing document and we welcome suggestions and input for new scenarios not yet covered on the Attribution project discussion page.
 
 <!-- ## Example of an embed
 

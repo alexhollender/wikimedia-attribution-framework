@@ -31,14 +31,9 @@ Technology and reuse practices are changing quickly. This framework is designed 
 ## What to expect
 For each scenario, we describe:
 
-The context in which Wikimedia content is typically reused in the selected scenario
-Why the reuse scenario matters, and why we chose to prioritize it.
-The required and recommended attribution signals that apply to each specific context, with illustrations, data sources and links to the sections that provide implementation guidance.
+- The context in which Wikimedia content is typically reused in the selected scenario
+- Why the reuse scenario matters, and why we chose to prioritize it.
+- The required and recommended attribution signals that apply to each specific context, with illustrations, data sources and links to the sections that provide implementation guidance.
 
 Our categorization should make it easier for reusers of Wikimedia content to recognize their context. The structure is designed to facilitate the quick grasping of the framework’s requirements and recommendations, and it provides flexibility for adapting signals to the particular affordances and constraints of each medium.
 
-## Propose a new scenario
-
-The above list does not cover all possible scenarios in which Wikimedia contents are reused. Please, share new scenarios not documented where you may need guidance for attribution.
-
-[Propose a new scenario](../help.html)
