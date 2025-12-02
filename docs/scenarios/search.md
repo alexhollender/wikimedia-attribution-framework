@@ -105,7 +105,9 @@ Use brand marks to visually identify the source of the information being reused.
 
 **Visibility on wiki.** High: Immediately visible at the source
 
-![Modification disclaimer example](../public/media/search-signals-modification.png)
+
+
+![Modification disclaimer example](../public/media/search-signals-modification.png#--float)
 
 ### [Modification disclaimer](../attribution-signals/modification-disclaimer.html) 
 
@@ -117,6 +119,7 @@ We recommend displaying disclaimers associated to aggregated content too, such a
 
 Under no circumstances should aggregate content be attributed to a single source (right image).
 
+--- {.clear}
 
 
 ## Trust and relevance

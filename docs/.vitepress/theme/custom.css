@@ -41,3 +41,14 @@ p img+em { /* Image caption. In markdown, emphasis right after the image is used
     padding: 8px;
     margin-bottom: 2em;
 }
+
+img[src*=--float]{ /* Images with "--float" appended in the src (after the "#") will float */
+    float: left;
+    margin: 2em; 
+    max-width: 33%;
+}
+
+hr.clear { /* Allows to use "--- {.clear}" to prevent contents to float after a floating image */
+  clear:both;
+  border: none;
+}

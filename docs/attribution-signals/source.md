@@ -1,7 +1,5 @@
 # Source
 
-<FilterButtons />
-
 Reusers of Wikimedia content must explicitly identify the project they are extracting information from as their Source. Clear sourcing is fundamental for attribution in an information ecosystem where third-party platforms mix and recontextualize Wikimedia content. This recognition supports trust, transparency, and compliance with open licenses.
 Identifying sources ensures that the contributions of Wikimedia volunteers remain visible and that end-users can recognize the origin of the knowledge they are consuming.
 
@@ -25,22 +23,48 @@ This data point is available through the Wikimedia Enterprise APIs: Source infor
 
 
 ## Implementation guidance {#implementation}
-Minimum requirements
-State the name of the Wikimedia project from which the content was retrieved in a way that fits the medium (e.g., “Source: Wikidata”, “From Wikimedia Commons”, or “According to Wikipedia…”).
+
+**Minimum requirements**
+
+- State the name of the Wikimedia project from which the content was retrieved in a way that fits the medium (e.g., “Source: Wikidata”, “From Wikimedia Commons”, or “According to Wikipedia…”).
 
 
-The source signal must remain accessible to all users in the context of data reuse, either in visual or auditory form. In visual interfaces, place the source label consistently near the reused content. Flexible placement of this signal is permitted only if strictly necessary (e.g., in a sources’ panel), as long as it is easily findable, identifiable and easy to associate with the content presented to end-users.
+- The source signal must remain accessible to all users in the context of data reuse, either in visual or auditory form. In visual interfaces, place the source label consistently near the reused content. Flexible placement of this signal is permitted only if strictly necessary (e.g., in a sources’ panel), as long as it is easily findable, identifiable and easy to associate with the content presented to end-users.
 
 
-Refrain from attributing aggregated content to a single Wikimedia project. Instead, clearly list all the sources being used and, if necessary, include a Modification disclaimer.
+- Refrain from attributing aggregated content to a single Wikimedia project. Instead, clearly list all the sources being used and, if necessary, include a Modification disclaimer.
 
 
-Best practices
-Pair the source label with Brand mark to support the quick identification of Wikimedia projects.
+**Best practices**
+
+- Pair the source label with Brand mark to support the quick identification of Wikimedia projects.
 
 
 Source might be represented using a project’s Brand mark only when space is limited, or in interfaces with a high information density.
 
+## Reuse scenarios
+
+<FilterButtons />
+
+<FilteredContent scenario="search">
+
+**Search** (Required)
+Clearly indicating the Wikimedia project on search results pages helps users understand where the information originates and reinforces Wikimedia’s role as a trusted knowledge source.
+
+[Learn more about attribution in this context →](../scenarios/search.md)
+</FilteredContent>
+
+<FilteredContent scenario="ai-assistants">
+
+**AI Assistants** (Required)
+In conversational interfaces, explicitly crediting Wikimedia clarifies that responses draw on a collaborative, human-curated source rather than on proprietary or opaque data.
+
+
+[Learn more about attribution in this context →](../scenarios/ai-assistants.md)
+</FilteredContent>
+
+
+> **Note**  All the illustrations provided are only for orientation. You may adjust the appearance of the signals to follow your design guidelines and visual style in order to ensure consistency in your context.
 
 <!-- 
 <FilterButtons />
