@@ -1,51 +1,84 @@
 <template>
-  <WikipediaCard
-    :icon="brandmark === 'favicon' ? cdxIconLogoWikipedia : undefined"
-    :thumbnail="thumbnailData"
-    :url="cardUrl"
-  >
-    <template #site-name>{{ siteName }}</template>
-    <template #site-url>en.wikipedia.org › wiki › {{ title }}</template>
-    <template #title>{{ title }}</template>
-    <template #chips>
-      <cdx-info-chip
-        v-for="chip in computedChips"
-        :key="chip.text"
-        :status="chip.type"
+  <div class="cdx-card cdx-card--search-result">
+    <div class="cdx-card__main-content">
+      <div class="cdx-card__header">
+        <div v-if="brandmark === 'favicon'" class="cdx-card__favicon-container">
+          <cdx-icon :icon="cdxIconLogoWikipedia" size="medium" />
+        </div>
+
+        <div class="cdx-card__site-info">
+          <div class="cdx-card__site-name">{{ siteName }}</div>
+          <div class="cdx-card__site-url">
+            en.wikipedia.org › wiki › {{ title }}
+          </div>
+        </div>
+      </div>
+
+      <component
+        :is="contentTag"
+        :href="cardLink"
+        class="cdx-card__title-link"
+        :class="{ 'cdx-card__title-link--is-link': isLink }"
       >
-        {{ chip.text }}
-      </cdx-info-chip>
-      <span
-        v-for="(item, index) in computedExtraChipContent"
-        :key="index"
-        class="extra-content-chip"
+        {{ title }}
+      </component>
+
+      <div
+        v-if="computedChips.length > 0 || computedExtraChipContent.length > 0"
+        class="cdx-card__chips"
       >
-        <span v-if="index > 0"> • </span>
-        {{ item.text }}
-      </span>
-    </template>
-    <template #description>{{ truncatedDescription }}</template>
-    <template #extra-content>
-      <span v-for="(item, index) in computedExtraContentItems" :key="index">
-        <span v-if="index > 0"> • </span>
-        <a
-          v-if="item.type === 'link'"
-          :href="item.href"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ item.text }}</a
+        <cdx-info-chip
+          v-for="chip in computedChips"
+          :key="chip.text"
+          :status="chip.type"
         >
-        <span v-else>{{ item.text }}</span>
-      </span>
-    </template>
-  </WikipediaCard>
+          {{ chip.text }}
+        </cdx-info-chip>
+        <span
+          v-for="(item, index) in computedExtraChipContent"
+          :key="index"
+          class="extra-content-chip"
+        >
+          <span v-if="index > 0"> • </span>
+          {{ item.text }}
+        </span>
+      </div>
+
+      <div class="cdx-card__content">
+        <div class="cdx-card__snippet">
+          {{ truncatedDescription }}
+        </div>
+        <cdx-thumbnail
+          v-if="thumbnailData"
+          :thumbnail="thumbnailData"
+          class="cdx-card__thumbnail"
+        />
+      </div>
+
+      <div
+        v-if="computedExtraContentItems.length > 0"
+        class="cdx-card__extra-content"
+      >
+        <span v-for="(item, index) in computedExtraContentItems" :key="index">
+          <span v-if="index > 0"> • </span>
+          <a
+            v-if="item.type === 'link'"
+            :href="item.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ item.text }}</a
+          >
+          <span v-else>{{ item.text }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
 import { cdxIconLogoWikipedia } from "@wikimedia/codex-icons";
-import { CdxInfoChip } from "@wikimedia/codex";
-import WikipediaCard from "./WikipediaCard.vue";
+import { CdxInfoChip, CdxIcon, CdxThumbnail } from "@wikimedia/codex";
 
 interface Props {
   url?: string;
@@ -90,6 +123,10 @@ const cardUrl = computed(() => {
   const encodedTitle = encodeURIComponent(props.title.replace(/\s+/g, "_"));
   return `https://en.wikipedia.org/wiki/${encodedTitle}`;
 });
+
+const isLink = computed(() => !!cardUrl.value);
+const contentTag = computed(() => (isLink.value ? "a" : "span"));
+const cardLink = computed(() => (isLink.value ? cardUrl.value : undefined));
 
 const thumbnailData = computed(() => {
   return props.thumbnail || defaultThumbnail;
@@ -197,8 +234,149 @@ const computedChips = computed(() => {
 });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @import (reference) "@wikimedia/codex-design-tokens/theme-wikimedia-ui.less";
+@import (reference) "@wikimedia/codex/mixins/link.less";
+
+.cdx-card {
+  background-color: @background-color-base;
+  border-radius: @border-radius-base;
+  padding: @spacing-100;
+  box-shadow: @box-shadow-medium;
+  border: none;
+
+  .cdx-info-chip__icon--vue {
+    display: none;
+  }
+
+  &--search-result {
+    display: flex;
+    align-items: flex-start;
+    gap: @spacing-100;
+    min-height: @size-400;
+  }
+
+  &__main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-25;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: @spacing-50;
+  }
+
+  &__favicon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(@size-icon-medium + 8px);
+    height: calc(@size-icon-medium + 8px);
+    padding: 4px;
+    flex-shrink: 0;
+    border: @border-subtle;
+    border-radius: @size-50;
+  }
+
+  &__favicon {
+    color: @color-subtle;
+    width: calc(@size-icon-medium + 18px);
+    height: calc(@size-icon-medium + 18px);
+    flex-shrink: 0;
+  }
+
+  &__site-info {
+    min-width: 0;
+  }
+
+  &__site-name,
+  &__site-url {
+    color: @color-base;
+    font-size: @font-size-x-small;
+    font-weight: @font-weight-normal;
+    line-height: @line-height-x-small;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  &__site-name {
+    color: @color-base;
+  }
+
+  &__site-url {
+    color: @color-subtle;
+  }
+
+  &__title-link {
+    color: @color-progressive;
+    font-size: @font-size-medium;
+    font-weight: @font-weight-bold !important;
+    text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    &--is-link {
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: @outline-base--focus;
+      }
+
+      &:visited {
+        color: @color-visited;
+      }
+    }
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @spacing-25;
+    align-items: center;
+  }
+
+  &__snippet {
+    color: @color-subtle;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: @spacing-100;
+  }
+
+  &__thumbnail.cdx-thumbnail {
+    flex-shrink: 0;
+
+    .cdx-thumbnail__placeholder,
+    .cdx-thumbnail__image {
+      object-fit: cover;
+      width: @size-400;
+      height: @size-400;
+      border-radius: @border-radius-base;
+    }
+  }
+
+  &__extra-content {
+    padding: 0;
+    color: @color-subtle;
+    font-size: @font-size-x-small;
+    line-height: @line-height-small;
+
+    a {
+      .cdx-mixin-link();
+    }
+  }
+}
 
 .extra-content-chip {
   font-size: @font-size-x-small;
