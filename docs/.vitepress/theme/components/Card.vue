@@ -28,12 +28,14 @@ withDefaults(
   </component>
 </template>
 
-<style scoped>
+<style lang="less">
+@import (reference) "@wikimedia/codex-design-tokens/theme-wikimedia-ui.less";
+@import (reference) "@wikimedia/codex/mixins/link.less";
 .card {
   display: block;
-  padding: 1.5rem;
+  padding: @spacing-150;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
+  border-radius: @border-radius-base;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
@@ -44,18 +46,18 @@ a.card:hover {
 }
 
 .card-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 600;
+  margin: 0 0 @spacing-50 0;
+  font-weight: @font-weight-bold;
 }
 
-a .card-title {
+.vp-doc a p.card-title {
   color: var(--vp-c-brand-1);
+  text-decoration: none;
 }
 
 .card-description {
   margin: 0;
   color: var(--vp-c-text-2);
-  line-height: 1.5;
+  line-height: @line-height-medium;
 }
 </style>

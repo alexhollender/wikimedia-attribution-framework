@@ -1,0 +1,43 @@
+@import "@wikimedia/codex/dist/codex.style.css";
+@import (reference) "@wikimedia/codex-design-tokens/theme-wikimedia-ui.less";
+@import (reference) "@wikimedia/codex/mixins/link.less";
+
+@media screen and (min-width: 768px) {
+  :root {
+    --vp-nav-height: 88px;
+    --vp-c-brand-1: @color-progressive;
+  }
+
+  aside.VPSidebar .curtain {
+    top: -88px;
+  }
+}
+
+.VPNavBarTitle .title {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  column-gap: @size-25;
+}
+
+.VPNavBarTitle .title span {
+  white-space: normal;
+  width: min-content;
+  font-size: @font-size-small;
+  line-height: @line-height-small;
+  font-family: @font-family-serif;
+  font-weight: @font-weight-bold;
+}
+
+.VPNavBarTitle .title img {
+  width: 38px;
+  height: auto;
+}
+
+#VPSidebarNav div section {
+  padding-bottom: @size-75;
+}
+
+.vp-doc a {
+  text-decoration: none;
+}

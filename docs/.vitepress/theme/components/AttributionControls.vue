@@ -216,46 +216,40 @@ function updateField(field: keyof FormData, value: any) {
 }
 </script>
 
-<style scoped>
+<style lang="less">
+@import (reference) "@wikimedia/codex-design-tokens/theme-wikimedia-ui.less";
+@import (reference) "@wikimedia/codex/mixins/link.less";
+
 .attribution-controls {
   display: flex;
-  gap: 2rem;
-  max-width: 1200px;
+  gap: @spacing-200;
 }
 
-.attribution-form {
-  flex: 1;
-  max-width: 600px;
-}
-
+.attribution-form,
 .content-form {
   flex: 1;
-  max-width: 400px;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: @spacing-100;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  margin-bottom: @spacing-50;
 }
 
-h2 {
-  margin-bottom: 1rem;
-  margin-top: 0;
-  font-size: 1.5rem;
+.vp-doc h2 {
+  padding: @spacing-100 0;
+  margin: 0;
 }
 
-h3 {
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+.vp-doc h3 {
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 768px) {

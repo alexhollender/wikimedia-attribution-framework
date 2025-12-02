@@ -1,6 +1,6 @@
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import "./custom.css";
+import "./custom.less";
 import Card from "./components/Card.vue";
 import GridLayout from "./components/GridLayout.vue";
 import FilterButtons from "./components/FilterButtons.vue";
