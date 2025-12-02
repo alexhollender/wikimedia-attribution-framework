@@ -3,7 +3,7 @@ import { scenarios, attributionSignals } from "./data";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Wikipedia Attribution Framework",
+  title: "Wikipedia Attribution Framework [BETA]",
   description:
     "Attribution Framework for reusers of Wikimedia projects' content.",
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
@@ -52,6 +52,8 @@ export default defineConfig({
       },
       {
         items: [
+          { text: "Adoption gallery", link: "/adoption" },
+          { text: "Research & resources", link: "/research" },
           {
             text: "Help",
             link: "/help",
