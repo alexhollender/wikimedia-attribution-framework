@@ -7,6 +7,8 @@ export default defineConfig({
   description:
     "Attribution Framework for reusers of Wikimedia projects' content.",
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  // Disable dark mode
+  appearance: false,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // nav: [
