@@ -18,19 +18,19 @@ Read more about using markdown files in Vitepress [here](https://vitepress.dev/g
 
 There are a few non-markdown files that are important:
 
-### `data.ts`
+#### `data.ts`
 
 This is where scenarios, attribution signals, and the scenarios:signals mapping is defined. Whenever you need to display scenarios or attribution signals (e.g. in the sidebar, on an overview page, in the filter component, etc.) you should be doing so dynamically by importing `data.ts` and mapping the necessary values. In other words, you should never be hard-coding lists of scenarios or signals.
 
-### `config.mts`
+#### `config.mts`
 
 This is the necessary Vitepress config file. It is primarily responsible for rendering the header and sidebar with site navigation. You can read more about it [here](https://vitepress.dev/reference/site-config).
 
-### `custom.less`
+#### `custom.less`
 
 This is for global style overrides. It is a [less](https://lesscss.org/) file, and imports Codex, so you can use Codex design tokens as mixins (e.g. `margin-bottom: @spacing-200;`).
 
-### `index.ts`
+#### `index.ts`
 
 This is for global component registration. Any components registered here can be used in any file accross the site.
 
