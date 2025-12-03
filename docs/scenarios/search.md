@@ -146,6 +146,8 @@ Under no circumstances should aggregate content be attributed to a single source
 
 ## Trust and relevance
 
+*Recommended signals*
+
 Beyond essential attribution, search results should help users assess the reliability of the information being surfaced. Signals such as reference counts, editor activity, or readership data make visible the processes of review, participation, and use that underpin Wikimedia projects. Highlighting these cues strengthens the credibility of both the content and the platform reusing it, while guiding audiences toward sources they can trust.
 
 
@@ -224,6 +226,8 @@ Use this attribute to display the timestamp of the most recent edit done to the 
 
 
 ## Ecosystem growth
+
+*Recommended signals*
 
 Attribution is not only about recognizing past contributions but also about sustaining the future of free knowledge. By including a clear participation call-to-action (CTA) in search results, reusers can help close the loop. Inviting audiences who benefit from Wikimedia content to also contribute back. This intervention supports the continued growth and renewal of Wikimedia projects, ensuring that the knowledge surfaced today keeps being enriched and expanded by volunteers tomorrow.
 
