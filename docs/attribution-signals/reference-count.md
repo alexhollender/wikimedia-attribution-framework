@@ -27,7 +27,7 @@ MediaWiki REST API can return the HTML of a page. Users would then have to parse
 
 >**Note**: This example was simplified, and is probably not a failsafe method, as some projects may be using different templates or gadgets that affect how references are rendered.
 
-[See MediaWiki REST API's documentation →](https://www.mediawiki.org/wiki/API:Action_API)
+[See MediaWiki REST API's documentation →](https://www.mediawiki.org/wiki/API:REST_API)
 
 ### Action API
 
