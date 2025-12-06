@@ -20,7 +20,7 @@ Public datasets include full revision histories that can be used to calculate ed
 
 The MediaWiki REST API currently offers a [`/page/{title}/history/counts/{type}` endpoint](https://www.mediawiki.org/wiki/API:REST_API/Reference#Get_page_history_counts) that allows requestors to get the total number of editors of an article.
 
-```
+```plaintext
 GET https://{lang}.{project}.org/w/rest.php/v1/page/{title}/history/counts/editors
 ```
 
