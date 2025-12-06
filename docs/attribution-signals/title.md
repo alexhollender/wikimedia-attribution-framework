@@ -6,6 +6,8 @@ It’s a commonly accepted, and practical, to use the source’s title as text f
 
 Titles are generally soft-required, and their omission is acceptable in favor of other core signals, such as [Source](source.md), in interfaces where space is constrained or information density is too high.
 
+<!-- TODO: Add mockups for Title examples-->
+
 <FilterButtons />
 
 ## Data sources {#data}
