@@ -43,7 +43,7 @@ MediaWiki REST API can return the HTML of a page. Users would then have to parse
 
 - Present article references as a single count (e.g., “XX references”).
 
-- Always display the number of references contained by the article being reused: avoid aggregating references across language versions of an article, or using the reference value corresponding to a different language variant of the source. 
+- Always display the number of references contained by the article being reused: avoid aggregating references across language versions of an article, or using the reference value corresponding to a different language variant of the source.
 
 - Keep it neutral: Use a stable label (“References”) and a simple integer. Avoid phrasings or visual representations that assign quality ratings to this attribute. The very presence of references is enough to allow readers to infer credibility.
 
@@ -65,7 +65,7 @@ MediaWiki REST API can return the HTML of a page. Users would then have to parse
 
 ### Search
 
-`Required`
+`Recommended`
 
 Showing how many references support an article reinforces Wikipedia’s verifiability and reliability.
 
@@ -76,7 +76,7 @@ Showing how many references support an article reinforces Wikipedia’s verifiab
 
 ### AI Assistants
 
-`Required`
+`Recommended`
 
 Exposing reference counts builds confidence that the underlying information is evidence-based.
 
